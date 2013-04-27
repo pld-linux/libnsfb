@@ -1,0 +1,12 @@
+--- libnsfb-0.1.0/Makefile.old	2013-04-27 14:29:05.784804745 +0200
++++ libnsfb-0.1.0/Makefile	2013-04-27 14:36:03.511264787 +0200
+@@ -92,7 +92,8 @@ ifeq ($(NSFB_WLD_AVAILABLE),yes)
+   REQUIRED_PKGS := $(REQUIRED_PKGS) wayland-client
+ endif 
+ 
+-TESTLDFLAGS := -lm -Wl,--whole-archive -l$(COMPONENT) -Wl,--no-whole-archive $(TESTLDFLAGS)
++#TESTLDFLAGS := -lm -Wl,--whole-archive -l$(COMPONENT) -Wl,--no-whole-archive $(TESTLDFLAGS)
++LDFLAGS := $(LDFLAGS) $(TESTLDFLAGS)
+ 
+ include $(NSBUILD)/Makefile.top
+ 
