@@ -1,0 +1,17 @@
+--- libnsfb-0.1.0/Makefile~	2013-04-27 17:46:15.000000000 +0300
++++ libnsfb-0.1.0/Makefile	2013-04-27 17:47:10.907357377 +0300
+@@ -98,11 +98,12 @@
+ include $(NSBUILD)/Makefile.top
+ 
+ # Extra installation rules
++lib := lib
+ I := /include
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/libnsfb.h
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/libnsfb_plot.h
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/libnsfb_plot_util.h
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/libnsfb_event.h
+ INSTALL_ITEMS := $(INSTALL_ITEMS) $(I):include/libnsfb_cursor.h
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /lib/pkgconfig:lib$(COMPONENT).pc.in
+-INSTALL_ITEMS := $(INSTALL_ITEMS) /lib:$(OUTPUT)
++INSTALL_ITEMS := $(INSTALL_ITEMS) /$(lib)/pkgconfig:lib$(COMPONENT).pc.in
++INSTALL_ITEMS := $(INSTALL_ITEMS) /$(lib):$(OUTPUT)

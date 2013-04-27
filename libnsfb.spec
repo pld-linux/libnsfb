@@ -11,6 +11,7 @@ Group:		Libraries
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
 # Source0-md5:	686a4d2064edfed47d2653588c3b5512
 Patch0:		%{name}-link.patch
+Patch1:		lib.patch
 URL:		http://www.netsurf-browser.org/projects/libnsfb/
 BuildRequires:	SDL-devel
 BuildRequires:	libvncserver-devel
@@ -67,6 +68,7 @@ Statyczna biblioteka libnsfb.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 export CC="%{__cc}"
@@ -85,12 +87,14 @@ export LDFLAGS="%{rpmldflags}"
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install Q= \
+	lib=%{_lib} \
 	PREFIX=%{_prefix} \
 	COMPONENT_TYPE=lib-shared \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %if %{with static_libs}
 %{__make} install Q= \
+	lib=%{_lib} \
 	PREFIX=%{_prefix} \
 	COMPONENT_TYPE=lib-static \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -104,16 +108,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libnsfb.so.*.*.*
+%ghost %{_libdir}/libnsfb.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_includedir}/*.h
-%{_pkgconfigdir}/*pc
+%{_libdir}/libnsfb.so
+%{_includedir}/libnsfb*.h
+%{_pkgconfigdir}/libnsfb.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libnsfb.a
 %endif
