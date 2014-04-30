@@ -11,7 +11,6 @@ Group:		Libraries
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
 # Source0-md5:	0dbcde843575a662c771b83806906f48
 Patch0:		%{name}-link.patch
-#Patch1:		lib.patch
 URL:		http://www.netsurf-browser.org/projects/libnsfb/
 BuildRequires:	SDL-devel
 BuildRequires:	libvncserver-devel
@@ -68,7 +67,6 @@ Statyczna biblioteka libnsfb.
 %prep
 %setup -q
 %patch0 -p1
-#%%patch1 -p1
 
 %build
 export CC="%{__cc}"
