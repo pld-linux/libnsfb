@@ -5,18 +5,18 @@
 Summary:	Framebuffer abstraction library
 Summary(pl.UTF-8):	Biblioteka abstrakcji bufora ramki
 Name:		libnsfb
-Version:	0.1.3
+Version:	0.1.4
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
-# Source0-md5:	0bca85a89e0be26a57d826979c56b89a
+# Source0-md5:	926798078d280f918e84186e155e227a
 Patch0:		%{name}-link.patch
 URL:		http://www.netsurf-browser.org/projects/libnsfb/
 BuildRequires:	SDL-devel
 BuildRequires:	libvncserver-devel
 BuildRequires:	libxcb-devel >= 1.3
-BuildRequires:	netsurf-buildsystem >= 1.3
+BuildRequires:	netsurf-buildsystem >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	wayland-devel
 BuildRequires:	xcb-util-devel
@@ -102,6 +102,7 @@ Statyczna biblioteka libnsfb.
 %patch0 -p1
 
 %build
+export AR="%{__ar}"
 export CC="%{__cc}"
 export CFLAGS="%{rpmcflags}"
 export LDFLAGS="%{rpmldflags}"
@@ -118,6 +119,11 @@ export LDFLAGS="%{rpmldflags}"
 %endif
 
 %install
+export AR="%{__ar}"
+export CC="%{__cc}"
+export CFLAGS="%{rpmcflags}"
+export LDFLAGS="%{rpmldflags}"
+
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	Q= \
