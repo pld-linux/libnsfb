@@ -5,12 +5,12 @@
 Summary:	Framebuffer abstraction library
 Summary(pl.UTF-8):	Biblioteka abstrakcji bufora ramki
 Name:		libnsfb
-Version:	0.1.4
+Version:	0.1.5
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
-# Source0-md5:	926798078d280f918e84186e155e227a
+# Source0-md5:	a642f6101aff6c294b11c75ee5390a8b
 Patch0:		%{name}-link.patch
 URL:		http://www.netsurf-browser.org/projects/libnsfb/
 BuildRequires:	SDL-devel
