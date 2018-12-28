@@ -5,26 +5,26 @@
 Summary:	Framebuffer abstraction library
 Summary(pl.UTF-8):	Biblioteka abstrakcji bufora ramki
 Name:		libnsfb
-Version:	0.1.6
+Version:	0.2.0
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
-# Source0-md5:	6a1f31cc266240589c55e4f38e61e4c7
+# Source0-md5:	598bf99aad38fd2083a9d668d1191238
 Patch0:		%{name}-link.patch
 URL:		http://www.netsurf-browser.org/projects/libnsfb/
 BuildRequires:	SDL-devel
 BuildRequires:	libvncserver-devel
 BuildRequires:	libxcb-devel >= 1.3
-BuildRequires:	netsurf-buildsystem >= 1.6
+BuildRequires:	netsurf-buildsystem >= 1.7
 BuildRequires:	pkgconfig
 BuildRequires:	wayland-devel
 BuildRequires:	xcb-util-devel
 BuildRequires:	xcb-util-image-devel
 BuildRequires:	xcb-util-keysyms-devel
-BuildRequires:	xcb-util-wm-devel >= 0.3.0
+BuildRequires:	xcb-util-wm-devel >= 0.3.8
 Requires:	libxcb-devel >= 1.3
-Requires:	xcb-util-wm-devel >= 0.3.0
+Requires:	xcb-util-wm-devel >= 0.3.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -75,7 +75,7 @@ Requires:	wayland-devel
 Requires:	xcb-util-devel
 Requires:	xcb-util-image-devel
 Requires:	xcb-util-keysyms-devel
-Requires:	xcb-util-wm-devel >= 0.3.0
+Requires:	xcb-util-wm-devel >= 0.3.8
 
 %description devel
 This package contains the include files and other resources you can
