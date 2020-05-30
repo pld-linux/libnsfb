@@ -5,18 +5,18 @@
 Summary:	Framebuffer abstraction library
 Summary(pl.UTF-8):	Biblioteka abstrakcji bufora ramki
 Name:		libnsfb
-Version:	0.2.1
+Version:	0.2.2
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://download.netsurf-browser.org/libs/releases/%{name}-%{version}-src.tar.gz
-# Source0-md5:	0b8f8eccd675ce058c55a4ab41af14c1
+# Source0-md5:	5c88a153d4330214460890c31bdf8b5d
 Patch0:		%{name}-link.patch
 URL:		http://www.netsurf-browser.org/projects/libnsfb/
 BuildRequires:	SDL-devel
 BuildRequires:	libvncserver-devel
 BuildRequires:	libxcb-devel >= 1.3
-BuildRequires:	netsurf-buildsystem >= 1.8
+BuildRequires:	netsurf-buildsystem >= 1.9
 BuildRequires:	pkgconfig
 BuildRequires:	wayland-devel
 BuildRequires:	xcb-util-devel
